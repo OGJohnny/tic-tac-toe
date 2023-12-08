@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#gameboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+}
+
+.square {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    text-align: center;
+    align-content: center;
+    font-size: var(--mark-size);
+}
+
+.square:nth-child(n+1) {
+    border-top: none;
+    border-left: none;
+}
+
+.square:nth-child(n+7) {
+    border-bottom: none;
+}
+
+.square:nth-child(3),
+.square:nth-child(6),
+.square:nth-child(9) {
+    border-right: none;
+}
+
+#controls {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10%;
+}
+
+#player1, 
+#player2,
+#start-button {
+    width: 200px;
+    height: 25px;
+    display: flex;
+    align-self: center;
+}
+
+#message {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#result-display {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#restart {
+    height: 50px;
+    width: 100px;
+    font-size: 25px;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+#restart:hover {
+    transform: scale(1.05);
+}
